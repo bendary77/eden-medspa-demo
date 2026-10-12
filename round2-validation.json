@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-13",
+  "target": "http://127.0.0.1:8765/",
+  "lighthouseVersion": "13.5.0",
+  "mobileScores": {
+    "performance": 94,
+    "accessibility": 100
+  },
+  "metrics": {
+    "first-contentful-paint": "1.2\u00a0s",
+    "largest-contentful-paint": "2.7\u00a0s",
+    "total-blocking-time": "160\u00a0ms",
+    "cumulative-layout-shift": "0.002",
+    "speed-index": "1.2\u00a0s"
+  },
+  "viewportChecks": [
+    {
+      "width": 375,
+      "initial": {
+        "videoSrc": null,
+        "videoPlaying": false,
+        "navWidth": 327,
+        "headerWidth": 327,
+        "barHidden": true
+      },
+      "hair": 1,
+      "faq": 1,
+      "map": {
+        "fallbackHidden": true,
+        "iframe": 330,
+        "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.26417315667!2d-80.077",
+        "text": "Map data \u00a92026 Google\nTerms\nReport a map error",
+        "images": 41
+      },
+      "dimensions": {
+        "pageWidth": 375,
+        "viewport": 375,
+        "height": 14247,
+        "brokenImages": [],
+        "tapTargets": []
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "initial": {
+        "videoSrc": "assets/hero-placeholder.mp4",
+        "videoPlaying": true,
+        "navWidth": 683,
+        "headerWidth": 683,
+        "barHidden": true
+      },
+      "hair": 1,
+      "faq": 1,
+      "map": {
+        "fallbackHidden": true,
+        "iframe": 470,
+        "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.26417315667!2d-80.077",
+        "text": "Keyboard shortcuts\nMap data \u00a92026 Google\nTerms\nReport a map error",
+        "images": 42
+      },
+      "dimensions": {
+        "pageWidth": 768,
+        "viewport": 768,
+        "height": 11028,
+        "brokenImages": [],
+        "tapTargets": []
+      },
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "initial": {
+        "videoSrc": "assets/hero-placeholder.mp4",
+        "videoPlaying": true,
+        "navWidth": 1138,
+        "headerWidth": 1138,
+        "barHidden": true
+      },
+      "hair": 1,
+      "faq": 1,
+      "map": {
+        "fallbackHidden": true,
+        "iframe": 470,
+        "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.26417315667!2d-80.077",
+        "text": "Keyboard shortcuts\nMap data \u00a92026 Google\nTerms\nReport a map error",
+        "images": 48
+      },
+      "dimensions": {
+        "pageWidth": 1280,
+        "viewport": 1280,
+        "height": 9840,
+        "brokenImages": [],
+        "tapTargets": []
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "initial": {
+        "videoSrc": "assets/hero-placeholder.mp4",
+        "videoPlaying": true,
+        "navWidth": 1240,
+        "headerWidth": 1240,
+        "barHidden": true
+      },
+      "hair": 1,
+      "faq": 1,
+      "map": {
+        "fallbackHidden": true,
+        "iframe": 470,
+        "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.26417315667!2d-80.077",
+        "text": "Keyboard shortcuts\nMap data \u00a92026 Google\nTerms\nReport a map error",
+        "images": 48
+      },
+      "dimensions": {
+        "pageWidth": 1440,
+        "viewport": 1440,
+        "height": 10039,
+        "brokenImages": [],
+        "tapTargets": []
+      },
+      "errors": []
+    },
+    {
+      "scenario": "reduced",
+      "videoRequests": 0
+    },
+    {
+      "scenario": "slow",
+      "videoRequests": 0
+    },
+    {
+      "scenario": "save-data",
+      "videoRequests": 0
+    }
+  ],
+  "behaviorChecks": {
+    "decentMobileVideo": {
+      "src": "assets/hero-placeholder.mp4",
+      "playing": true
+    },
+    "stickyAfterHero": true,
+    "skinFilter": [
+      "skin",
+      "skin",
+      "skin",
+      "skin",
+      "skin",
+      "skin"
+    ],
+    "menuClosed": "false",
+    "pausedReviews": {
+      "scrollable": true,
+      "animation": "none"
+    },
+    "clonesInert": true,
+    "stickyAtTop": false,
+    "noJSRows": 16,
+    "noJSStories": 8,
+    "noJSFallback": true
+  },
+  "limitations": [
+    "Local static-server audit; deployed hosting and real devices can differ.",
+    "Stock video and concern imagery remain placeholders until Eden supplies its own media."
+  ]
+}
