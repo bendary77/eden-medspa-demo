@@ -1,0 +1,246 @@
+[
+  {
+    "width": 1440,
+    "layout": {
+      "viewport": 1440,
+      "width": 1440,
+      "height": 6404,
+      "h1": 1,
+      "images": [
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med — Advanced Aesthetics & Regenerative Medicine"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, welcoming patients to Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-clinic.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa’s white facade and original sign in East Boca Raton"
+        },
+        {
+          "src": "assets/wrinkle-relaxers.webp",
+          "loaded": true,
+          "alt": "Wrinkle relaxer treatment imagery from Eden Med Spa’s Botox and Dysport page"
+        },
+        {
+          "src": "assets/dermal-fillers.webp",
+          "loaded": true,
+          "alt": "Lip filler treatment featured on Eden Med Spa’s dermal fillers page"
+        },
+        {
+          "src": "assets/hydraderm-facial.webp",
+          "loaded": true,
+          "alt": "HydraDerm facial device cleansing the skin, from Eden Med Spa’s facial collection"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, founder and lead injector at Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa"
+        }
+      ],
+      "smallTargets": [],
+      "overflow": []
+    },
+    "menu": "desktop",
+    "expanded": {
+      "open": true,
+      "width": 1440,
+      "heads": 16
+    },
+    "errors": [],
+    "accessibility": []
+  },
+  {
+    "width": 375,
+    "layout": {
+      "viewport": 375,
+      "width": 375,
+      "height": 8396,
+      "h1": 1,
+      "images": [
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med — Advanced Aesthetics & Regenerative Medicine"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, welcoming patients to Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-clinic.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa’s white facade and original sign in East Boca Raton"
+        },
+        {
+          "src": "assets/wrinkle-relaxers.webp",
+          "loaded": true,
+          "alt": "Wrinkle relaxer treatment imagery from Eden Med Spa’s Botox and Dysport page"
+        },
+        {
+          "src": "assets/dermal-fillers.webp",
+          "loaded": true,
+          "alt": "Lip filler treatment featured on Eden Med Spa’s dermal fillers page"
+        },
+        {
+          "src": "assets/hydraderm-facial.webp",
+          "loaded": true,
+          "alt": "HydraDerm facial device cleansing the skin, from Eden Med Spa’s facial collection"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, founder and lead injector at Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa"
+        }
+      ],
+      "smallTargets": [],
+      "overflow": []
+    },
+    "menu": "pass",
+    "expanded": {
+      "open": true,
+      "width": 375,
+      "heads": 16
+    },
+    "errors": [],
+    "accessibility": []
+  },
+  {
+    "width": 768,
+    "layout": {
+      "viewport": 768,
+      "width": 768,
+      "height": 6065,
+      "h1": 1,
+      "images": [
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med — Advanced Aesthetics & Regenerative Medicine"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, welcoming patients to Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-clinic.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa’s white facade and original sign in East Boca Raton"
+        },
+        {
+          "src": "assets/wrinkle-relaxers.webp",
+          "loaded": true,
+          "alt": "Wrinkle relaxer treatment imagery from Eden Med Spa’s Botox and Dysport page"
+        },
+        {
+          "src": "assets/dermal-fillers.webp",
+          "loaded": true,
+          "alt": "Lip filler treatment featured on Eden Med Spa’s dermal fillers page"
+        },
+        {
+          "src": "assets/hydraderm-facial.webp",
+          "loaded": true,
+          "alt": "HydraDerm facial device cleansing the skin, from Eden Med Spa’s facial collection"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, founder and lead injector at Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa"
+        }
+      ],
+      "smallTargets": [],
+      "overflow": []
+    },
+    "menu": "desktop",
+    "expanded": {
+      "open": true,
+      "width": 768,
+      "heads": 16
+    },
+    "errors": [],
+    "accessibility": []
+  },
+  {
+    "width": 1280,
+    "layout": {
+      "viewport": 1280,
+      "width": 1280,
+      "height": 6285,
+      "h1": 1,
+      "images": [
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med — Advanced Aesthetics & Regenerative Medicine"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, welcoming patients to Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-clinic.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa’s white facade and original sign in East Boca Raton"
+        },
+        {
+          "src": "assets/wrinkle-relaxers.webp",
+          "loaded": true,
+          "alt": "Wrinkle relaxer treatment imagery from Eden Med Spa’s Botox and Dysport page"
+        },
+        {
+          "src": "assets/dermal-fillers.webp",
+          "loaded": true,
+          "alt": "Lip filler treatment featured on Eden Med Spa’s dermal fillers page"
+        },
+        {
+          "src": "assets/hydraderm-facial.webp",
+          "loaded": true,
+          "alt": "HydraDerm facial device cleansing the skin, from Eden Med Spa’s facial collection"
+        },
+        {
+          "src": "assets/limor-serri.webp",
+          "loaded": true,
+          "alt": "Limor Serri, MMS, PA-C, founder and lead injector at Eden Med Spa in Boca Raton"
+        },
+        {
+          "src": "assets/eden-logo.webp",
+          "loaded": true,
+          "alt": "Eden Med Spa"
+        }
+      ],
+      "smallTargets": [],
+      "overflow": []
+    },
+    "menu": "desktop",
+    "expanded": {
+      "open": true,
+      "width": 1280,
+      "heads": 16
+    },
+    "errors": [],
+    "accessibility": []
+  }
+]

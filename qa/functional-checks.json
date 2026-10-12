@@ -1,0 +1,114 @@
+{
+  "status": "pass",
+  "metadata": {
+    "title": "Med Spa in Boca Raton | Botox, Fillers & Skin | Eden Med Spa",
+    "description": "Discover natural-looking Botox, lip fillers, PRP and skin treatments at Eden Med Spa in Boca Raton. Meet Limor Serri, MMS, PA-C, in East Boca. Complimentary consultations.",
+    "robots": "noindex, nofollow",
+    "canonical": "https://edenmedicine.com/",
+    "h1Count": 1,
+    "missingAlts": 0,
+    "brokenAnchors": [],
+    "schema": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "MedicalBusiness",
+          "@id": "https://edenmedicine.com/#business",
+          "name": "Eden Med Spa",
+          "url": "https://edenmedicine.com/",
+          "telephone": "+1-561-931-9320",
+          "email": "info@edenmedicine.com",
+          "logo": "https://edenmedicine.com/wp-content/uploads/2024/05/logo23.png",
+          "image": "https://edenmedicine.com/wp-content/uploads/2024/06/eden.png",
+          "foundingDate": "2007",
+          "founder": {
+            "@id": "https://edenmedicine.com/#limor-serri"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "714 E Palmetto Park Road",
+            "addressLocality": "Boca Raton",
+            "addressRegion": "FL",
+            "postalCode": "33432",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 26.3503163,
+            "longitude": -80.0744349
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "10:00",
+              "closes": "18:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.facebook.com/edenmedicine/",
+            "https://www.instagram.com/edenmedicine/",
+            "https://www.tiktok.com/@edenmedicine"
+          ],
+          "hasMap": "https://www.google.com/maps/search/?api=1&query=Eden+Med+Spa+714+E+Palmetto+Park+Road+Boca+Raton",
+          "potentialAction": {
+            "@type": "ReserveAction",
+            "target": "https://edenmedicine.com/book-appointment/"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://edenmedicine.com/#limor-serri",
+          "name": "Limor Serri",
+          "honorificSuffix": "MMS, PA-C",
+          "jobTitle": "Founder and Lead Physician Associate",
+          "url": "https://edenmedicine.com/about-us/",
+          "image": "https://edenmedicine.com/wp-content/uploads/2024/06/limro.png",
+          "worksFor": {
+            "@id": "https://edenmedicine.com/#business"
+          },
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Nova Southeastern University"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "name": "Michigan State University"
+            }
+          ]
+        }
+      ]
+    },
+    "palette": {
+      "primary": "#F8F4EC",
+      "secondary": "#EFE7DA",
+      "text": "#2A2420",
+      "accent": "#3B5640",
+      "muted": "#6E645B"
+    },
+    "bookingLinks": [
+      "https://edenmedicine.com/book-appointment/",
+      "https://edenmedicine.com/book-appointment/",
+      "https://edenmedicine.com/book-appointment/"
+    ]
+  },
+  "contrastRatios": {
+    "accentOnIvory": 7.39,
+    "whiteOnAccent": 8.1,
+    "mutedOnIvory": 5.26,
+    "mutedOnCream": 4.71
+  },
+  "interactions": [
+    "mobile menu open/close",
+    "menu anchor navigation",
+    "keyboard treatment directory",
+    "sticky header",
+    "no-JavaScript navigation and directory"
+  ]
+}
