@@ -5,6 +5,13 @@ updated: 2026-10-13
 ---
 # Eden Med Spa — homepage concept
 
+## Round 5 changes
+
+- Replaced the utility strip and bar header with an inset glass pill. It hides while scrolling down, returns while scrolling up, and highlights the current section; the mobile menu remains full-screen.
+- Added previous/next category controls, keyboard cycling, and brief staggered treatment-card entrances while keeping the existing tabs and treatment content.
+- Rebuilt the eight unchanged patient excerpts as one compact, seamless 60-second marquee, pausing on hover or focus and becoming a scroll row for reduced motion.
+- Shortened the Instagram heading and removed arrows from button labels. Captures: `screenshots/round5-{1440,375}-{top,scrolled,full}.png`. Chrome checks found no 375px overflow; Lighthouse accessibility scored 100.
+
 ## Round 4 changes
 
 - Simplified typography to large Cormorant headings and Jost for the rest; added the utility bar, centered navigation, solid EDEN med wordmarks, and a full-screen mobile menu. The hero still uses the existing Round 3 video.
