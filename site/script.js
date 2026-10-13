@@ -131,11 +131,20 @@ const treatmentCards = [...document.querySelectorAll('.treatment-card')];
 const viewAllTreatments = document.querySelector('.view-all');
 let activeTreatmentCategory = 'injectables';
 let allCategoryTreatmentsVisible = false;
-function renderTreatments() {
+let treatmentAnimationFrame;
+function renderTreatments(animate = false) {
+  cancelAnimationFrame(treatmentAnimationFrame);
   const matches = treatmentCards.filter((card) => card.dataset.category === activeTreatmentCategory);
   treatmentCards.forEach((card) => {
+    card.classList.remove('is-entering');
     const categoryIndex = matches.indexOf(card);
     card.hidden = categoryIndex < 0 || (!allCategoryTreatmentsVisible && categoryIndex >= 4);
+  });
+  if (animate) treatmentAnimationFrame = requestAnimationFrame(() => {
+    matches.filter((card) => !card.hidden).forEach((card, index) => {
+      card.style.setProperty('--stagger', `${index * 50}ms`);
+      card.classList.add('is-entering');
+    });
   });
   treatmentTabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.category === activeTreatmentCategory)));
   const category = treatmentTabs.find((tab) => tab.dataset.category === activeTreatmentCategory).textContent.trim().toLowerCase();
@@ -143,11 +152,37 @@ function renderTreatments() {
   viewAllTreatments.setAttribute('aria-expanded', String(allCategoryTreatmentsVisible));
   viewAllTreatments.textContent = allCategoryTreatmentsVisible ? `Show fewer ${category}` : `View all ${category}`;
 }
-treatmentTabs.forEach((tab) => tab.addEventListener('click', () => {
-  activeTreatmentCategory = tab.dataset.category;
+function selectTreatmentCategory(category, focusTab = false) {
+  if (category === activeTreatmentCategory) return;
+  activeTreatmentCategory = category;
   allCategoryTreatmentsVisible = false;
-  renderTreatments();
-}));
+  renderTreatments(true);
+  const selectedTab = treatmentTabs.find((tab) => tab.dataset.category === category);
+  if (focusTab) selectedTab.focus();
+  if (matchMedia('(max-width: 767px)').matches) {
+    const tabs = selectedTab.parentElement;
+    tabs.scrollTo({ left: selectedTab.offsetLeft - tabs.offsetLeft - (tabs.clientWidth - selectedTab.clientWidth) / 2, behavior: 'smooth' });
+    document.getElementById('treatment-grid').scrollLeft = 0;
+  }
+}
+treatmentTabs.forEach((tab) => {
+  tab.addEventListener('click', () => selectTreatmentCategory(tab.dataset.category));
+  tab.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+    event.preventDefault();
+    const step = event.key === 'ArrowRight' ? 1 : -1;
+    const index = (treatmentTabs.indexOf(tab) + step + treatmentTabs.length) % treatmentTabs.length;
+    selectTreatmentCategory(treatmentTabs[index].dataset.category, true);
+  });
+});
+document.querySelector('.category-prev').addEventListener('click', () => {
+  const index = (treatmentTabs.findIndex((tab) => tab.dataset.category === activeTreatmentCategory) - 1 + treatmentTabs.length) % treatmentTabs.length;
+  selectTreatmentCategory(treatmentTabs[index].dataset.category);
+});
+document.querySelector('.category-next').addEventListener('click', () => {
+  const index = (treatmentTabs.findIndex((tab) => tab.dataset.category === activeTreatmentCategory) + 1) % treatmentTabs.length;
+  selectTreatmentCategory(treatmentTabs[index].dataset.category);
+});
 viewAllTreatments.addEventListener('click', () => {
   allCategoryTreatmentsVisible = !allCategoryTreatmentsVisible;
   renderTreatments();
