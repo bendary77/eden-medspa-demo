@@ -110,53 +110,37 @@ if ('IntersectionObserver' in window) {
   new IntersectionObserver(([entry]) => { mapInView = entry.isIntersecting; updateMapFallback(); }).observe(mapFrame);
 } else { mapInView = true; }
 
-const treatmentRows = [...document.querySelectorAll('.treatment-row')];
-const treatmentFilters = document.querySelector('.treatment-filters');
-const treatmentStatus = document.querySelector('#treatment-status');
+const treatmentTabs = [...document.querySelectorAll('.treatment-tab')];
+const treatmentCards = [...document.querySelectorAll('.treatment-card')];
 const viewAllTreatments = document.querySelector('.view-all');
-let allTreatmentsExpanded = false;
-treatmentFilters.hidden = false;
-function filterTreatments(value, concern = false) {
-  const isAll = value === 'all';
-  let count = 0;
-  treatmentRows.forEach((row, index) => {
-    const match = isAll || (concern ? row.dataset.concerns.split(' ').includes(value) : row.dataset.category === value);
-    const show = match && (!isAll || allTreatmentsExpanded || index < 8);
-    row.hidden = !show;
-    if (show) count++;
+let activeTreatmentCategory = 'injectables';
+let allCategoryTreatmentsVisible = false;
+function renderTreatments() {
+  const matches = treatmentCards.filter((card) => card.dataset.category === activeTreatmentCategory);
+  treatmentCards.forEach((card) => {
+    const categoryIndex = matches.indexOf(card);
+    card.hidden = categoryIndex < 0 || (!allCategoryTreatmentsVisible && categoryIndex >= 4);
   });
-  viewAllTreatments.hidden = !isAll;
-  viewAllTreatments.setAttribute('aria-expanded', String(allTreatmentsExpanded));
-  viewAllTreatments.innerHTML = allTreatmentsExpanded ? 'Show fewer treatments <span aria-hidden="true">↑</span>' : 'View all 16 treatments <span aria-hidden="true">↗</span>';
-  treatmentFilters.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(!concern && button.dataset.category === value)));
-  const label = concern ? document.querySelector(`[data-concern="${value}"] .tile-title`).textContent : value === 'all' ? 'All treatments' : value.charAt(0).toUpperCase() + value.slice(1);
-  treatmentStatus.textContent = isAll && !allTreatmentsExpanded ? '8 of 16 treatments shown' : `${label} · ${count} ${count === 1 ? 'option' : 'options'}`;
+  treatmentTabs.forEach((tab) => tab.setAttribute('aria-pressed', String(tab.dataset.category === activeTreatmentCategory)));
+  const category = treatmentTabs.find((tab) => tab.dataset.category === activeTreatmentCategory).textContent.trim().toLowerCase();
+  viewAllTreatments.hidden = matches.length <= 4;
+  viewAllTreatments.setAttribute('aria-expanded', String(allCategoryTreatmentsVisible));
+  viewAllTreatments.textContent = allCategoryTreatmentsVisible ? `Show fewer ${category}` : `View all ${category}`;
 }
-treatmentFilters.addEventListener('click', (event) => {
-  const button = event.target.closest('[data-category]');
-  if (button) { if (button.dataset.category === 'all') allTreatmentsExpanded = false; filterTreatments(button.dataset.category); }
-});
+treatmentTabs.forEach((tab) => tab.addEventListener('click', () => {
+  activeTreatmentCategory = tab.dataset.category;
+  allCategoryTreatmentsVisible = false;
+  renderTreatments();
+}));
 viewAllTreatments.addEventListener('click', () => {
-  allTreatmentsExpanded = !allTreatmentsExpanded;
-  filterTreatments('all');
+  allCategoryTreatmentsVisible = !allCategoryTreatmentsVisible;
+  renderTreatments();
 });
-document.querySelectorAll('[data-concern]').forEach((link) => link.addEventListener('click', () => {
-  filterTreatments(link.dataset.concern, true);
-  document.querySelector('#treatment-list').focus({ preventScroll: true });
-}));
-function handleCategoryHash() {
-  const category = location.hash.slice(1);
-  if (['injectables', 'skin', 'wellness'].includes(category)) filterTreatments(category);
-  if (category === 'treatments') filterTreatments('all');
-}
-addEventListener('hashchange', handleCategoryHash);
-document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener('click', () => {
-  const category = link.hash.slice(1);
-  if (['injectables', 'skin', 'wellness'].includes(category)) filterTreatments(category);
-  else if (category === 'treatments') filterTreatments('all');
-}));
-filterTreatments('all');
-handleCategoryHash();
+document.querySelectorAll('.main-nav a[href^="#"]').forEach((link) => {
+  const tab = document.querySelector(`.treatment-tab${link.getAttribute('href')}`);
+  if (tab) link.addEventListener('click', () => tab.click());
+});
+renderTreatments();
 
 const reviewsSection = document.querySelector('.reviews');
 const reviewPause = document.querySelector('.review-pause');
