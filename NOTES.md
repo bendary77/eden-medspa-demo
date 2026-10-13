@@ -5,6 +5,13 @@ updated: 2026-10-13
 ---
 # Eden Med Spa — homepage concept
 
+## Round 3 changes
+
+- Replaced the hammam with a bright, white-room facial clip from [Mixkit](https://mixkit.co/free-stock-video/woman-working-in-a-spa-52142/) under its [commercial-use Free License](https://mixkit.co/license/#videoFree). The 9.68-second H.264 loop is 0.99 MB, native 23.98 fps, silent and poster-first, with a blended loop seam and reduced-motion fallback.
+- Moved reviews below the FAQ, reduced them to one compact marquee row and replaced editorial summaries with verbatim patient excerpts.
+- Shortened desktop concern tiles, made them swipeable on mobile, changed treatments to a two-column eight-of-sixteen list with full filter results, merged philosophy copy into the three care points, reduced booking CTAs and tightened the wordmark.
+- Full-page captures: `screenshots/round3-{1440,375}-{initial,final}.png`. Page height fell from **10,039 to 7,406 px** at 1440 and **14,316 to 9,274 px** at 375. Chrome played at rate 1 with zero dropped frames across a loop; no 375 px horizontal overflow, and the sticky action bar hides at the footer. Safari playback remains unverified because Safari WebDriver requires local password authentication.
+
 ## Round 2 changes
 
 - A full-width, softly moving spa video now opens the page, with Boca Raton in the headline and clear Book, Call and Text actions.
@@ -19,11 +26,11 @@ updated: 2026-10-13
 ## The design, in plain language
 
 - Ivory **#F8F4EC**, cream **#EFE7DA** and white **#FFFFFF** now carry the page. They make the brand feel brighter, quieter and more spacious.
-- Eden’s original circle logo stays in the repo for comparison; outlined SVG wordmarks now lead the page. Forest green **#3B5640**, deep green **#174C26** and sage **#6CA082** come from the existing site’s CSS. Forest green anchors buttons and links; sage is decorative, not small text.
+- Eden’s original circle logo and Round 2 SVG wordmarks stay in the repo for comparison; a closer-set text wordmark now appears in the header and footer. Forest green **#3B5640**, deep green **#174C26** and sage **#6CA082** come from the existing site’s CSS. Forest green anchors buttons and links; sage is decorative, not small text.
 - Warm ink **#2A2420** and muted brown **#6E645B** replace harsh black. The important text and buttons retain accessible contrast.
 - **Cormorant Garamond** gives headlines an editorial feel; **Jost** keeps body copy clean and clinical. Both are locally hosted Google Fonts, with licenses included.
 - Limor’s real portrait appears once in Meet Limor, alongside a separate row for named staff. Licensed stock imagery supplies the video and concern tiles until Eden’s own photos arrive. The social preview uses current site images. No generated photographs, invented patients or fabricated results are used.
-- The sequence is hero, patient stories, concern browsing and treatment list, Limor and team, philosophy and reasons to choose Eden, FAQ, financing, consultation, location and Instagram. Category and concern filters keep the complete service list useful without repeating the services in another section.
+- The sequence is hero, concern browsing and a compact treatment list, Limor and team, the three care points, FAQ, patient stories, financing, consultation, location and Instagram. Category and concern filters show all matches; the unfiltered list first shows eight treatments with a view-all toggle.
 - Boca Raton leads the title, description and local-business information; East Boca remains the neighborhood. The page explains who injects and what Eden offers in plain language, with verified business and practitioner schema.
 - This is straightforward to recreate in Elementor: standard containers, images, headings, text, buttons, accordion and map. Global colors and fonts are named at the top of `styles.css`; there are no framework dependencies or elaborate effects.
 
@@ -46,13 +53,12 @@ The demo is intentionally **noindex, nofollow**, with its canonical URL pointing
 
 ## Round 2 asset sources and swaps
 
-- **Hero placeholder:** `site/assets/hero-placeholder.mp4` and its first-frame `hero-poster.webp`. Source: [Mixkit — Massage and relaxation room](https://mixkit.co/free-stock-video/massage-and-relaxation-room-4184/), under the [Mixkit Stock Video Free License](https://mixkit.co/license/#videoFree), which permits commercial use. This is stock atmosphere, not Eden’s premises; replace with Eden’s own footage when filmed. Silent, 1280 × 720, 8 seconds, under 4 MB. The final cut opens on the quieter treatment platform and is slowed to half speed. Poster-first; reduced motion, data saving and mobile connections without confirmed adequate bandwidth keep the still image.
+- **Hero placeholder:** `site/assets/hero-clinical-facial.mp4` and its first-frame `hero-poster.webp`. Source: [Mixkit — Woman working in a spa](https://mixkit.co/free-stock-video/woman-working-in-a-spa-52142/), under the [Mixkit Stock Video Free License](https://mixkit.co/license/#videoFree), which permits commercial use. This shows a facial in a bright white treatment room, not Eden’s premises. The 9.68-second loop is silent H.264 MP4, 1280 × 720, constant native 23.98 fps, 48-frame keyframe interval, faststart and 0.99 MB. Its end blends into its beginning without changing playback speed. The first frame is the poster; reduced motion, data saving and mobile connections without confirmed adequate bandwidth keep the still image.
 
 ### The circle-free logo
-We opened up the logo by removing the circle, giving “EDEN” room to breathe and keeping a softer, flowing “med” beside it.
-The ivory and deep-green versions stay clear at small sizes; the original circle logo is retained for a side-by-side comparison, with the descriptor reserved for the footer.
+Round 2 removed the circle. Round 3 tightens the header and footer lockup with “med” closer to the EDEN baseline and sized for mobile. The original circle and SVG variants remain for comparison; the descriptor stays in the footer.
 
-- **Philosophy placeholder:** `philosophy-interior.webp` is a still from the same licensed Mixkit clip, used only as atmosphere. Replace with an Eden treatment-room photo. The teal storefront is no longer displayed; its original asset stays in the repo.
+- **Philosophy placeholder:** The separate philosophy section and its stock still were retired in Round 3. Its key copy now introduces the three care points. The teal storefront is no longer displayed; its original asset stays in the repo.
 - **Hours:** Tuesday–Friday, 10 am–6 pm remain from the booking system. Confirm with Limor before launch, including Saturday availability.
 
 ### Concern image placeholders
@@ -74,9 +80,9 @@ Limor’s current portrait appears only in Meet Limor (`limor-serri.webp`). The 
 - **Instagram preview placeholders:** `instagram-01.webp` through `instagram-05.webp` use current Eden website images (Juliet, HydraDerm, skin-care imagery, Caitlyn, fillers). Each tile links to the real Instagram profile; this is a curated preview, not a live Instagram feed. Swap each file independently with approved social photographs. Limor’s portrait remains exclusive to Meet Limor.
 
 ### Review verification and component port
-The supplied 21st.dev `marquee-01` was ported to native HTML/CSS/JS: two opposing rows, cards, soft edge fades and hover pause. A visible pause control, keyboard pause, manually scrollable reduced-motion mode and hidden inert animation copies make every story accessible. No React, Tailwind, profile-photo placeholders or framework setup are needed.
+The supplied 21st.dev `marquee-01` was ported to native HTML/CSS/JS: one compact row, cards, soft edge fades and hover pause. A visible pause control, keyboard pause, manually scrollable reduced-motion mode and hidden inert animation copies make every story accessible. No React, Tailwind, profile-photo placeholders or framework setup are needed.
 
-Eight real patient stories were selected: Jaiden D., Whitney B., Anna S., Chetna L., Dylan R. and Sloane S. ([homepage](https://edenmedicine.com/), May 30, 2024); Eric G. and Betty R. ([testimonials](https://edenmedicine.com/testimonials/), September 21, 2024). Each card uses a short exact excerpt plus an explicitly labeled editorial summary and a link to the full source, rather than reproducing entire reviews. Dates are as displayed by Eden, not independently verified Google publication dates.
+Eight real patient stories were selected: Jaiden D., Whitney B., Anna S., Chetna L., Dylan R. and Sloane S. ([homepage](https://edenmedicine.com/), May 30, 2024); Eric G. and Betty R. ([testimonials](https://edenmedicine.com/testimonials/), September 21, 2024). Each card now uses one verbatim sentence or pair of sentences and links to the full source. Dates are as displayed by Eden, not independently verified Google publication dates.
 
 Repeated copies of the same name/text/date from widgets and the two pages were collapsed. Brittany W. was excluded because identical text carries conflicting dates. Any normalized text associated with different names is excluded. No aggregate count or rating is asserted; the Google link opens the business search.
 

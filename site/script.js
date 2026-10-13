@@ -84,7 +84,10 @@ addEventListener('load', () => {
 
 const mobileActions = document.querySelector('.mobile-actions');
 const heroSection = document.querySelector('.hero');
-function updateMobileActions() { mobileActions.hidden = heroSection.getBoundingClientRect().bottom > 0; }
+const footerSection = document.querySelector('.site-footer');
+function updateMobileActions() {
+  mobileActions.hidden = heroSection.getBoundingClientRect().bottom > 0 || footerSection.getBoundingClientRect().top < innerHeight;
+}
 addEventListener('scroll', updateMobileActions, { passive: true });
 addEventListener('resize', updateMobileActions);
 updateMobileActions();
@@ -110,21 +113,32 @@ if ('IntersectionObserver' in window) {
 const treatmentRows = [...document.querySelectorAll('.treatment-row')];
 const treatmentFilters = document.querySelector('.treatment-filters');
 const treatmentStatus = document.querySelector('#treatment-status');
+const viewAllTreatments = document.querySelector('.view-all');
+let allTreatmentsExpanded = false;
 treatmentFilters.hidden = false;
 function filterTreatments(value, concern = false) {
+  const isAll = value === 'all';
   let count = 0;
-  treatmentRows.forEach((row) => {
-    const show = value === 'all' || (concern ? row.dataset.concerns.split(' ').includes(value) : row.dataset.category === value);
+  treatmentRows.forEach((row, index) => {
+    const match = isAll || (concern ? row.dataset.concerns.split(' ').includes(value) : row.dataset.category === value);
+    const show = match && (!isAll || allTreatmentsExpanded || index < 8);
     row.hidden = !show;
     if (show) count++;
   });
+  viewAllTreatments.hidden = !isAll;
+  viewAllTreatments.setAttribute('aria-expanded', String(allTreatmentsExpanded));
+  viewAllTreatments.innerHTML = allTreatmentsExpanded ? 'Show fewer treatments <span aria-hidden="true">↑</span>' : 'View all 16 treatments <span aria-hidden="true">↗</span>';
   treatmentFilters.querySelectorAll('button').forEach((button) => button.setAttribute('aria-pressed', String(!concern && button.dataset.category === value)));
   const label = concern ? document.querySelector(`[data-concern="${value}"] .tile-title`).textContent : value === 'all' ? 'All treatments' : value.charAt(0).toUpperCase() + value.slice(1);
-  treatmentStatus.textContent = `${label} · ${count} ${count === 1 ? 'option' : 'options'}`;
+  treatmentStatus.textContent = isAll && !allTreatmentsExpanded ? '8 of 16 treatments shown' : `${label} · ${count} ${count === 1 ? 'option' : 'options'}`;
 }
 treatmentFilters.addEventListener('click', (event) => {
   const button = event.target.closest('[data-category]');
-  if (button) filterTreatments(button.dataset.category);
+  if (button) { if (button.dataset.category === 'all') allTreatmentsExpanded = false; filterTreatments(button.dataset.category); }
+});
+viewAllTreatments.addEventListener('click', () => {
+  allTreatmentsExpanded = !allTreatmentsExpanded;
+  filterTreatments('all');
 });
 document.querySelectorAll('[data-concern]').forEach((link) => link.addEventListener('click', () => {
   filterTreatments(link.dataset.concern, true);
@@ -141,6 +155,7 @@ document.querySelectorAll('.main-nav a').forEach((link) => link.addEventListener
   if (['injectables', 'skin', 'wellness'].includes(category)) filterTreatments(category);
   else if (category === 'treatments') filterTreatments('all');
 }));
+filterTreatments('all');
 handleCategoryHash();
 
 const reviewsSection = document.querySelector('.reviews');
