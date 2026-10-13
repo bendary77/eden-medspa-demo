@@ -142,26 +142,21 @@ document.querySelectorAll('.main-nav a[href^="#"]').forEach((link) => {
 });
 renderTreatments();
 
-const reviewsSection = document.querySelector('.reviews');
-const reviewPause = document.querySelector('.review-pause');
-let reviewsPausedByUser = false;
-document.querySelectorAll('.marquee-group').forEach((group) => {
-  const copy = group.cloneNode(true);
-  copy.classList.add('marquee-clone');
-  copy.setAttribute('aria-hidden', 'true');
-  copy.inert = true;
-  group.parentElement.append(copy);
-});
-reviewsSection.classList.add('marquee-ready');
-function syncReviewMotion() {
-  reviewPause.hidden = reducedMotion.matches;
-  reviewsSection.classList.toggle('is-paused', reviewsPausedByUser || reducedMotion.matches);
+const reviewViewport = document.querySelector('.review-viewport');
+const reviewCards = [...document.querySelectorAll('.review-card')];
+const reviewPrev = document.querySelector('.review-prev');
+const reviewNext = document.querySelector('.review-next');
+function reviewStep() { return reviewCards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(document.querySelector('.review-track')).gap || 0); }
+function updateReviewArrows() {
+  const max = reviewViewport.scrollWidth - reviewViewport.clientWidth;
+  reviewPrev.disabled = reviewViewport.scrollLeft <= 2;
+  reviewNext.disabled = reviewViewport.scrollLeft >= max - 2;
 }
-reviewPause.addEventListener('click', () => {
-  reviewsPausedByUser = !reviewsPausedByUser;
-  reviewPause.setAttribute('aria-pressed', String(reviewsPausedByUser));
-  reviewPause.textContent = reviewsPausedByUser ? 'Play reviews' : 'Pause reviews';
-  syncReviewMotion();
-});
-reducedMotion.addEventListener('change', syncReviewMotion);
-syncReviewMotion();
+function moveReviews(direction) {
+  reviewViewport.scrollBy({ left: reviewStep() * direction, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+}
+reviewPrev.addEventListener('click', () => moveReviews(-1));
+reviewNext.addEventListener('click', () => moveReviews(1));
+reviewViewport.addEventListener('scroll', updateReviewArrows, { passive: true });
+addEventListener('resize', updateReviewArrows);
+updateReviewArrows();
