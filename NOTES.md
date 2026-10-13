@@ -5,6 +5,14 @@ updated: 2026-10-13
 ---
 # Eden Med Spa — homepage concept
 
+## Round 4 changes
+
+- Simplified typography to large Cormorant headings and Jost for the rest; added the utility bar, centered navigation, solid EDEN med wordmarks, and a full-screen mobile menu. The hero still uses the existing Round 3 video.
+- Replaced the concern tiles and text list with 16 linked treatment cards across Injectables, Skin, Wellness, and Body & Hair. Cards use 4:5 locally processed images, including Eden’s existing wrinkle-relaxer, filler, and HydraDerm photos plus Pexels photos under the [Pexels license](https://www.pexels.com/license/): [34220534](https://www.pexels.com/photo/woman-receiving-cosmetic-injection-treatment-34220534/), [4586755](https://www.pexels.com/photo/a-woman-having-facial-care-4586755/), [20683632](https://www.pexels.com/photo/skin-care-procedure-on-woman-face-20683632/), [4586728](https://www.pexels.com/photo/a-woman-doing-facial-care-to-her-patient-4586728/), [5938601](https://www.pexels.com/photo/ethnic-woman-applying-cream-on-face-in-morning-5938601/), [31797384](https://www.pexels.com/photo/relaxing-spa-facial-treatment-session-31797384/), [34930099](https://www.pexels.com/photo/professional-facial-treatment-at-spa-34930099/), [8076229](https://www.pexels.com/photo/beauty-cosmetics-on-table-top-8076229/), [3736399](https://www.pexels.com/photo/lotions-in-a-beauty-salon-3736399/), [3992806](https://www.pexels.com/photo/woman-having-a-check-up-3992806/), [7088494](https://www.pexels.com/photo/people-woman-sitting-doctor-7088494/), [7772681](https://www.pexels.com/photo/unrecognizable-female-under-laser-weight-loss-machine-on-medical-table-7772681/), and [3738365](https://www.pexels.com/photo/photo-of-person-applying-cream-to-womans-hands-3738365/).
+- Moved the compact Our team row under Meet Limor, changed reviews to a manual carousel with three visible cards, aligned the Instagram tiles, and organized the footer into four columns with icon links.
+- Removed visible promotional filler and disclaimer lines while retaining the Boca-area service sentence, noindex directive, MedicalBusiness and FAQ schema, map, reviews, and section order.
+- Compared the header and treatment hierarchy with [Allure Aesthetics](https://www.allurefl.com/) and made one correction pass. Final captures are `screenshots/round4-1440.png` and `screenshots/round4-375.png`; Lighthouse accessibility scored 100, both widths have no horizontal overflow, the mobile menu opens full-screen, and the sticky action bar hides before the footer. Chrome playback stayed at 1× through a loop with zero dropped frames in the desktop capture.
+
 ## Round 3 changes
 
 - Replaced the hammam with a bright, white-room facial clip from [Mixkit](https://mixkit.co/free-stock-video/woman-working-in-a-spa-52142/) under its [commercial-use Free License](https://mixkit.co/license/#videoFree). The 9.68-second H.264 loop is 0.99 MB, native 23.98 fps, silent and poster-first, with a blended loop seam and reduced-motion fallback.
@@ -46,7 +54,7 @@ Open `site/index.html` to preview, or serve the `site/` directory with any stati
 
 Images and fonts are local. Only the embedded Google Map and outbound links need internet access. Booking, treatment, gallery and policy links intentionally open Eden’s existing website; this demo does not collect patient information or submit appointments.
 
-The demo is intentionally **noindex, nofollow**, with its canonical URL pointing to the real homepage, so an uploaded pitch does not compete with Eden’s live site. For the approved production rebuild, remove the noindex directive, confirm canonical/OG URLs, replace the design-concept footer note and re-test the deployed site.
+The demo is intentionally **noindex, nofollow**, with its canonical URL pointing to the real homepage, so an uploaded pitch does not compete with Eden’s live site. For the approved production rebuild, remove the noindex directive, confirm canonical/OG URLs and stock imagery, and re-test the deployed site.
 
 **Before the production launch:** confirm opening hours with Limor. The linked Square booking location currently lists Tuesday–Friday, 10 am–6 pm, with Saturday–Monday closed; an older storefront photograph shows Saturday hours. The demo and schema use the current booking data. Confirm current availability and clinical wording for all treatments, particularly stem cells, prescription weight-loss care, peptides and booking-menu additions. See [research and sources](eden-research.md).
 

@@ -403,3 +403,18 @@ h3,h4,.treatment-row h4,.faq-item h3,.team-cards h3,.review-person h3{font:500 2
 .footer-main h2{margin:0 0 8px;font:500 15px/1.3 var(--e-global-typography-text-font-family);letter-spacing:.03em;color:#223A2A}
 .footer-contact a,.footer-main nav a{color:#4A423B}.socials{display:flex;gap:14px;margin:2px 0 0}.socials a{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:50%;color:#223A2A}.socials svg{width:16px;height:16px;fill:currentColor}.footer-bottom{font-size:13px}.footer-bottom p{font-size:13px;color:#6E645B}
 @media(max-width:767px){.section,.founder,.why-eden,.instagram{padding-block:72px}.founder{row-gap:28px}.team{grid-template-columns:1fr;gap:15px;margin-top:8px;padding-top:21px}.team-cards{gap:18px}.team-cards figure{width:auto;flex:1;gap:9px;align-items:flex-start;flex-direction:column}.team-cards img{width:64px;height:64px;flex-basis:64px}.team-cards h3{font-size:18px}.team-cards p{font-size:14px}.reviews{padding-block:72px}.reviews-heading h2{font-size:34px}.review-track{width:max-content;gap:14px}.review-card{flex:0 0 calc(100vw - 92px);min-height:250px;padding:20px}.review-viewport{overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain}.review-card{scroll-snap-align:start}.review-person{align-items:flex-start;flex-direction:column;gap:2px}.review-card blockquote{font-size:17px}.reviews-foot{justify-content:flex-start}.instagram-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.footer-main{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px;padding-block:28px}.footer-brand{grid-column:1/-1}.footer-main nav,.footer-contact,.footer-social{font-size:14px}.footer-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:10px}.footer-bottom p{font-size:13px}}
+.hero h1{font-size:72px;line-height:1.02}
+.hero .hero-description{color:#F8F4EC;text-shadow:0 1px 6px #0008}
+.treatments .section-heading.treatment-heading{display:block}
+.site-footer .brand-lockup,.site-footer .brand-descriptor,.footer-main h2,.footer-main nav a,.footer-contact a,.footer-bottom p,.footer-bottom a{color:#F8F4EC}
+.site-footer .brand-descriptor,.footer-bottom p{color:#D5CCBE}
+.footer-main nav,.footer-contact,.footer-social{color:#F8F4EC}
+.socials a{border-color:#F8F4EC66;color:#F8F4EC}
+.button,.button-outline,.hero-actions .button,.treatment-cta .button,.consultation-actions .button,.mobile-actions .button{height:48px;min-height:48px;padding-block:0;font-size:14px;font-weight:500;letter-spacing:.04em}
+.hero-actions .button:first-child{font-size:14px}
+.site-header .header-book,.mobile-actions>a{height:48px;min-height:48px}
+.call-link,.mobile-actions>a:not(.button){font-size:14px}
+.team-cards h3,.faq-item h3{font-size:20px}
+.financing h2{font:500 20px/1.3 var(--e-global-typography-text-font-family);color:#223A2A}
+@media(max-width:767px){.hero h1{font-size:42px}}
+@media(max-width:767px){.faq-item h3,.financing h2{font-size:18px}}
