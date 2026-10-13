@@ -29,7 +29,23 @@ document.addEventListener('click', (event) => {
   if (!header.contains(event.target)) closeMenu();
 });
 matchMedia('(min-width: 961px)').addEventListener('change', () => closeMenu());
-function updateHeader() { header.classList.toggle('is-scrolled', window.scrollY > 20); }
+let previousScrollY = window.scrollY;
+function updateHeader() {
+  const currentScrollY = window.scrollY;
+  header.classList.toggle('is-scrolled', currentScrollY > 20);
+  if (currentScrollY < 120 || header.classList.contains('menu-open') || currentScrollY < previousScrollY - 1) header.classList.remove('is-hidden');
+  else if (currentScrollY > previousScrollY + 1) header.classList.add('is-hidden');
+  previousScrollY = currentScrollY;
+  const marker = innerHeight * .35;
+  const currentSection = ['treatments', 'about', 'contact'].find((id) => {
+    const bounds = document.getElementById(id).getBoundingClientRect();
+    return bounds.top <= marker && bounds.bottom > marker;
+  });
+  document.querySelectorAll('.main-nav a').forEach((link) => {
+    if (link.hash === `#${currentSection}`) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
 addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
 
